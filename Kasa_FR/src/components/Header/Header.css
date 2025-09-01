@@ -1,0 +1,39 @@
+
+header {
+    width: 100vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1240px;
+    padding: 0 2rem;
+    box-sizing: border-box;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+  }
+  
+  button.active {
+  text-decoration: underline;
+}
+  

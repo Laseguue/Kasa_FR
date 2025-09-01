@@ -1,18 +1,15 @@
 import React from 'react';
 import ImgCover from './ImgCover';
-import Fiabiliti from './Fiabiliti';
-import Service from './Service';
-import Respect from './Respect';
-import Security from './Security';
+import Features from './Features';
+import './Apropos.css';
+
 function Apropos() {
   return (
     <div className="apropos">
-        <ImgCover />
-        <Fiabiliti />
-        <Respect />
-        <Service />
-        <Security />
+      <ImgCover />
+      <Features />
     </div>
   );
 }
+
 export default Apropos;

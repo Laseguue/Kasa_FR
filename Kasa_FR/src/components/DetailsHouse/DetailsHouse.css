@@ -1,0 +1,258 @@
+.details-house {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 415px;
+  border-radius: 25px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+
+
+.carousel-btn.prev {
+  left: 20px;
+}
+
+.carousel-btn.next {
+  right: 20px;
+}
+
+.carousel-arrow {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.carousel-arrow.left {
+  transform: rotate(90deg);
+}
+
+.carousel-arrow.right {
+  transform: rotate(-90deg);
+}
+
+.carousel-btn:hover .carousel-arrow.left {
+  transform: rotate(90deg) scale(1.2);
+}
+
+.carousel-btn:hover .carousel-arrow.right {
+  transform: rotate(-90deg) scale(1.2);
+}
+
+.carousel-counter {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+}
+
+.house-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  gap: 2rem;
+}
+
+.house-main-info {
+  flex: 1;
+}
+
+.house-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  color: #FF6060;
+  margin: 0 0 0.5rem 0;
+}
+
+.house-location {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  margin: 0 0 1rem 0;
+}
+
+.house-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background-color: #FF6060;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.house-host-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.host-details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.host-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #FF6060;
+  text-align: right;
+  max-width: 100px;
+  line-height: 1.2;
+}
+
+.host-picture {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.host-rating {
+  display: flex;
+  gap: 2px;
+}
+
+.star {
+  font-size: 24px;
+}
+
+.star.filled {
+  color: #FF6060;
+}
+
+.star.empty {
+  color: #E3E3E3;
+}
+
+.house-accordions {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.accordion-item {
+  flex: 1;
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #FF6060;
+  color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.accordion-header:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-header h3 {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.accordion-arrow {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.accordion-content {
+  background-color: #F6F6F673;
+  padding: 1rem;
+  border-radius: 0 0 5px 5px;
+  animation: slideDown 0.3s ease-out;
+}
+
+.accordion-content p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  color: #333;
+}
+
+.accordion-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.accordion-content li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.accordion-content li:last-child {
+  margin-bottom: 0;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 300px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+

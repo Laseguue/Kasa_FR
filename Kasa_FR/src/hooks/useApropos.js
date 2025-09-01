@@ -1,20 +1,20 @@
 import { useState, useEffect } from 'react';
 
-function useHouses() {
-  const [houses, setHouses] = useState([]);
+function useApropos() {
+  const [apropos, setApropos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('/data/houses.json')
+    fetch('/data/apropos.json')
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Failed to fetch houses data');
+          throw new Error('Failed to fetch apropos data');
         }
         return response.json();
       })
       .then((data) => {
-        setHouses(data);
+        setApropos(data);
         setIsLoading(false);
       })
       .catch((err) => {
@@ -23,7 +23,7 @@ function useHouses() {
       });
   }, []);
 
-  return { houses, isLoading, error };
+  return { apropos, isLoading, error };
 }
 
-export default useHouses;
+export default useApropos;

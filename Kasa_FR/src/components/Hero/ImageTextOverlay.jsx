@@ -5,7 +5,7 @@ function ImageTextOverlay() {
     <div className="image-text-overlay">
       <img src="/HeroImageTextOverlay.png" alt="Paysage rocheux" />
       <div className="text">
-        <h2>Chez vous, partout et ailleurs</h2>
+        <h1>Chez vous, partout et ailleurs</h1>
       </div>
     </div>
   );

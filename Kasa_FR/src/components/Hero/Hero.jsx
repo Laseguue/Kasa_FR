@@ -2,6 +2,7 @@ import React from 'react';
 import ImageTextOverlay from './ImageTextOverlay';
 import CardHouseList from './CardHouseList';
 import useHouses from '../../hooks/useHouses';
+import './Hero.css';
 
 function Hero() {
   const { houses, isLoading, error } = useHouses();

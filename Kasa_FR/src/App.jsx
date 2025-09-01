@@ -5,6 +5,7 @@ import Hero from './components/Hero/Hero.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import DetailsHouse from './components/DetailsHouse/DetailsHouse.jsx';
 import Apropos from './components/Apropos/Apropos.jsx';
+import FortyFour from './components/404/FortyFour.jsx';
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
         <Route path="/" element={<Hero />} />
         <Route path="/details/:id" element={<DetailsHouse />} />
         <Route path="/apropos" element={<Apropos />} />
-        <Route path="*" element={<div>404 Not Found</div>} />
+        <Route path="*" element={<FortyFour />} />
       </Routes>
       <Footer />
     </div>
