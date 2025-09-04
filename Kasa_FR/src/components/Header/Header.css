@@ -1,19 +1,25 @@
 
 header {
-    width: 100vw;
+    width: 100%;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     padding: 2rem 0;
   }
   
+header img {
+  width: clamp(120px, 18vw, 200px);
+  height: auto;
+  object-fit: contain;
+}
+
   .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     max-width: 1240px;
-    padding: 0 2rem;
+    padding: 0 1rem;
     box-sizing: border-box;
   }
   
@@ -21,7 +27,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: clamp(0.75rem, 3vw, 2rem);
   }
   
   button {
@@ -30,10 +36,37 @@ header {
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    font-size: 24px;
+    font-size: clamp(16px, 2.5vw, 24px);
   }
   
   button.active {
   text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  header {
+    padding: 1.5rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    padding: 0 0.75rem;
+  }
+  nav {
+    gap: clamp(0.5rem, 2.5vw, 1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  header img {
+    width: clamp(110px, 30vw, 150px);
+  }
+}
+
+@media (max-width: 639px) {
+  header {
+    padding: 1rem 0;
+  }
 }
   

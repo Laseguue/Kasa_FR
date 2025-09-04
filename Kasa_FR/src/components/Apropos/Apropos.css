@@ -3,20 +3,30 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 2rem;
+}
+
+@media (max-width: 639px) {
+  .apropos {
+    padding: 1rem;
+  }
 }
 
 .img-cover {
     position: relative;
     display: inline-block;
-    padding: 2rem;
+    --cover-pad: clamp(0.75rem, 2vw, 2rem);
+    padding: var(--cover-pad);
+    width: 100%;
+    max-width: 1240px;
+    height: clamp(140px, 22vw, 223px);
 }
 
 .img-cover::before {
     content: '';
     border-radius: 25px;
     border: 1px solid #000;
-    width: 1240px;
-    height: 223px;
+    inset: var(--cover-pad);
     position: absolute;
     background-color: rgba(0, 0, 0, 0.3);
     z-index: 1;
@@ -25,8 +35,8 @@
 .img-cover img {
     border-radius: 25px;
     display: block;
-    width: 1240px;
-    height: 223px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -36,8 +46,9 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
-    width: 1136px;
-    max-width: 80%;
+    width: 100%;
+    max-width: 1136px;
+    padding: 0 clamp(0.75rem, 3vw, 1.5rem);
 }
 
 .features .features-content {
@@ -47,12 +58,12 @@
     background-color: #FF6060;
     color: #FFF;
     border-radius: 5px;
-    padding:0.5rem;
+    padding: clamp(0.5rem, 1.2vw, 0.8rem);
     width: 100%;
     cursor: pointer;
     box-sizing: border-box;
     transition: all 0.3s ease;
-    max-height: 50px;
+    max-height: clamp(42px, 6vw, 50px);
 }
 
 .features .features-content:hover {
@@ -83,7 +94,7 @@
 
 .features h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
+    font-size: clamp(18px, 2.4vw, 24px);
     font-weight: 700;
     line-height: normal;
     color: #FFF;
@@ -91,7 +102,7 @@
 
 .features p {
     font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
+    font-size: clamp(14px, 2vw, 15px);
     font-weight: 400;
     line-height: normal;
 }

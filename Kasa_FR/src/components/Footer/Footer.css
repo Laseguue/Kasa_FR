@@ -8,3 +8,9 @@ footer {
     text-align: center;
     padding: 2rem;
 }
+
+@media (max-width: 639px) {
+  footer {
+    padding: 1rem;
+  }
+}

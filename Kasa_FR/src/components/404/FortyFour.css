@@ -8,6 +8,12 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+@media (max-width: 639px) {
+  .forty-four {
+    padding: 1rem;
+  }
+}
+
 .forty-four h1 {
     font-size: 288px;
     font-weight: 700;

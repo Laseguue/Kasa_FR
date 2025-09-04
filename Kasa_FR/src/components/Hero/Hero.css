@@ -6,19 +6,28 @@
     padding: 2rem;
 }
 
+@media (max-width: 639px) {
+  .hero {
+    padding: 1rem;
+  }
+}
+
 .image-text-overlay {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    max-width: 1240px;
+    height: clamp(140px, 22vw, 223px);
 }
 
 .image-text-overlay::before {
     content: '';
     border-radius: 25px;
     border: 1px solid #000;
-    width: 1240px;
-    height: 223px;
+    width: 100%;
+    height: 100%;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 1;
@@ -27,8 +36,8 @@
 .image-text-overlay img {
     border-radius: 25px;
     display: block;
-    width: 1240px;
-    height: 223px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -47,7 +56,7 @@
 .image-text-overlay h1 {
     color: #FFF;
     font-family: 'Montserrat', sans-serif;
-    font-size: 48px;
+    font-size: clamp(24px, 4vw, 48px);
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -56,15 +65,26 @@
 
 .card-house-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    padding: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: clamp(1rem, 3vw, 3rem);
+    padding: clamp(1rem, 3vw, 3rem);
     background-color: #F6F6F6;
     border-radius: 25px;
-    width: 1240px;
-    max-width: 100%;
-    margin: 2rem 0 0 0;
+    width: 100%;
+    max-width: 1240px;
+    margin: 2rem auto 0;
     box-sizing: border-box;
+    justify-items: stretch;
+    align-items: stretch;
+    justify-content: center;
+    overflow: hidden;
+}
+
+@media (max-width: 639px) {
+  .card-house-list {
+    padding: 0;
+    background-color: transparent;
+  }
 }
 
 .card-house {
@@ -73,12 +93,14 @@
     align-items: flex-end;
     border-radius: 10px;
     overflow: hidden;
-    height: 340px;
+    height: clamp(200px, 30vw, 340px);
     object-position: center;
+    width: 100%;
 }
 
 .card-house img {
-    max-width: 100%;
+    display: block;
+    width: 100%;
     height: 100%;
     border-radius: 5px;
     object-fit: cover;
@@ -90,7 +112,7 @@
     position: absolute;
     bottom: 10px;
     left: 0;
-    font-size: 1.2em;
+    font-size: clamp(0.95rem, 1.5vw, 1.2rem);
     color: #FFF;
     border-radius: 0 5px 5px 0;
     margin: 0;
