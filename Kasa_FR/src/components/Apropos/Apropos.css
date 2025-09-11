@@ -79,6 +79,17 @@
     transform: scale(1.1);
 }
 
+/* Rotation de la flèche quand la section est ouverte */
+.features .features-content .arrow {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.features .features-content .arrow.open {
+    transform: rotate(180deg);
+}
+
 .features-text {
     padding: 0.5rem 1rem;
     margin: 0;

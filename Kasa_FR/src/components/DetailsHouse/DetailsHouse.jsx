@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useHouses from '../../hooks/useHouses';
 import './DetailsHouse.css';
+import Features from '../Apropos/Features';
 
 function DetailsHouse() {
   const { id } = useParams();
   const { houses, isLoading, error } = useHouses();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [openSections, setOpenSections] = useState({});
-
+  
   if (isLoading) {
     return <div>Chargement...</div>;
   }
@@ -35,12 +35,7 @@ function DetailsHouse() {
     );
   };
 
-  const toggleSection = (sectionKey) => {
-    setOpenSections(prev => ({
-      ...prev,
-      [sectionKey]: !prev[sectionKey]
-    }));
-  };
+  
 
   const renderStars = (rating) => {
     const stars = [];
@@ -101,39 +96,23 @@ function DetailsHouse() {
 
       <div className='house-accordions'>
         <div className='accordion-item'>
-          <div className='accordion-header' onClick={() => toggleSection('description')}>
-            <h3>Description</h3>
-            <img 
-              src={openSections['description'] ? "/fleche-vers-bas.svg" : "/fleche-vers-haut.svg"} 
-              alt="toggle" 
-              className="accordion-arrow"
-            />
-          </div>
-          {openSections['description'] && (
-            <div className='accordion-content'>
-              <p>{house.description}</p>
-            </div>
-          )}
+          <Features items={[{ title: 'Description', content: <p>{house.description}</p> }]} />
         </div>
-
         <div className='accordion-item'>
-          <div className='accordion-header' onClick={() => toggleSection('equipments')}>
-            <h3>Équipements</h3>
-            <img 
-              src={openSections['equipments'] ? "/fleche-vers-bas.svg" : "/fleche-vers-haut.svg"} 
-              alt="toggle" 
-              className="accordion-arrow"
-            />
-          </div>
-          {openSections['equipments'] && (
-            <div className='accordion-content'>
-              <ul>
-                {house.equipments.map((equipment, index) => (
-                  <li key={index}>{equipment}</li>
-                ))}
-              </ul>
-            </div>
-          )}
+          <Features
+            items={[
+              {
+                title: 'Équipements',
+                content: (
+                  <ul>
+                    {house.equipments.map((equipment, index) => (
+                      <li key={index}>{equipment}</li>
+                    ))}
+                  </ul>
+                )
+              }
+            ]}
+          />
         </div>
       </div>
     </div>
